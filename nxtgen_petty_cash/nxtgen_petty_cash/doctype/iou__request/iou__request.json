@@ -1,0 +1,257 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:IOU-{#####}",
+ "creation": "2025-11-13 13:29:00.038194",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "department",
+  "expenses_type",
+  "column_break_mloz",
+  "date",
+  "currency",
+  "amount",
+  "status",
+  "section_break_hbjb",
+  "project",
+  "amended_from",
+  "column_break_rohc",
+  "cost_center",
+  "section_break_dyjl",
+  "description",
+  "remark",
+  "section_break_tzms",
+  "approver",
+  "approver_name",
+  "column_break_meza",
+  "approved_on",
+  "approved_ammount",
+  "disbursed_details_tab",
+  "disbursed_by",
+  "disbursed_by_name",
+  "column_break_inlv",
+  "disbursed_on",
+  "disbursed_ammount"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_hbjb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "IOU  Request",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_mloz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  },
+  {
+   "default": "LKR",
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "expenses_type",
+   "fieldtype": "Link",
+   "label": "Expenses Type",
+   "options": "Expense Claim Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_rohc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "\nPending\nApproved\nDisbursed\nSettled\nCancelled"
+  },
+  {
+   "fieldname": "section_break_dyjl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Small Text",
+   "label": "Remark"
+  },
+  {
+   "fieldname": "section_break_tzms",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "approver",
+   "fieldtype": "Link",
+   "label": "Approver",
+   "options": "User"
+  },
+  {
+   "fetch_from": "approver.full_name",
+   "fieldname": "approver_name",
+   "fieldtype": "Data",
+   "label": "Approver Name"
+  },
+  {
+   "fieldname": "column_break_meza",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "disbursed_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Disbursed Details"
+  },
+  {
+   "fieldname": "disbursed_by",
+   "fieldtype": "Link",
+   "label": "Disbursed By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_inlv",
+   "fieldtype": "Column Break",
+   "read_only": 1
+  },
+  {
+   "fieldname": "disbursed_by_name",
+   "fieldtype": "Data",
+   "label": "Disbursed By Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "disbursed_on",
+   "fieldtype": "Date",
+   "label": "Disbursed On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approved_on",
+   "fieldtype": "Date",
+   "label": "Approved On"
+  },
+  {
+   "fieldname": "approved_ammount",
+   "fieldtype": "Currency",
+   "label": "Approved Ammount "
+  },
+  {
+   "fieldname": "disbursed_ammount",
+   "fieldtype": "Currency",
+   "label": "Disbursed Ammount"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-11-16 22:12:27.864616",
+ "modified_by": "Administrator",
+ "module": "Nxtgen Petty Cash",
+ "name": "IOU  Request",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Yellow",
+   "title": "Pending"
+  },
+  {
+   "color": "Green",
+   "title": "Approved"
+  },
+  {
+   "color": "Purple",
+   "title": "Disbursed"
+  },
+  {
+   "color": "Green",
+   "title": "Settled"
+  },
+  {
+   "color": "Red",
+   "title": "Cancelled"
+  }
+ ]
+}

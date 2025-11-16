@@ -1,0 +1,130 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:PCF-{YYYY}-{#####}",
+ "creation": "2025-11-10 16:03:48.676964",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_kjzm",
+  "petty_cash_box",
+  "request_by",
+  "column_break_gjyk",
+  "request_amount",
+  "required_on",
+  "account_details_section",
+  "account",
+  "column_break_vrfv",
+  "approver",
+  "section_break_mtky",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_kjzm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Petty Cash Fund",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "petty_cash_box",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Petty Cash Box",
+   "options": "Petty Cash Box",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_gjyk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_mtky",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "request_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Request Amount",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "request_by",
+   "fieldtype": "Link",
+   "label": "Request By",
+   "options": "User"
+  },
+  {
+   "fieldname": "required_on",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Required On",
+   "reqd": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "account_details_section",
+   "fieldtype": "Section Break",
+   "label": "Account Details"
+  },
+  {
+   "fetch_from": "petty_cash_box.account",
+   "fieldname": "account",
+   "fieldtype": "Link",
+   "label": "Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "column_break_vrfv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "petty_cash_box.approver",
+   "fieldname": "approver",
+   "fieldtype": "Link",
+   "label": "Approver",
+   "options": "User"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-11-10 16:32:28.069148",
+ "modified_by": "Administrator",
+ "module": "Nxtgen Petty Cash",
+ "name": "Petty Cash Fund",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

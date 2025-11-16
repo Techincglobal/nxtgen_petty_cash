@@ -138,6 +138,9 @@ app_license = "mit"
 # Hook on document methods and events
 
 # doc_events = {
+# 	"Customer": {
+# 		"autoname": "nxtgen_petty_cash.custom.customer.customer_naming.custom_customer_naming"
+# 	}
 # 	"*": {
 # 		"on_update": "method",
 # 		"on_cancel": "method",
