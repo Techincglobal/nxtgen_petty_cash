@@ -54,6 +54,7 @@
   },
   {
    "fetch_from": "iou_settlement.expense_amount",
+   "fetch_if_empty": 1,
    "fieldname": "amount",
    "fieldtype": "Currency",
    "in_list_view": 1,
@@ -65,7 +66,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-11-22 23:18:35.936533",
+ "modified": "2025-11-23 21:35:36.911089",
  "modified_by": "Administrator",
  "module": "Nxtgen Petty Cash",
  "name": "Petty Cash Payment Entry Item",

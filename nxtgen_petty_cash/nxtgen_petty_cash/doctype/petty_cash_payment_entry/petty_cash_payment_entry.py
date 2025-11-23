@@ -25,7 +25,7 @@ class PettyCashPaymentEntry(Document):
 			default_cost_center = self.cost_center
 		else:
 			default_cost_center = frappe.db.get_value("Company", self.company, "cost_center")
-		gl_entries = []
+		# gl_entries = []
 		for item in self.items:
 			gl_entries = []
 			# debit entry
