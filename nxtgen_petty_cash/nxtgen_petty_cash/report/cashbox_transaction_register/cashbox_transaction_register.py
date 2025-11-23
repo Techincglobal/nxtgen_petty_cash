@@ -42,9 +42,9 @@ def get_data(filters=None):
 		conditions += f" AND DATE(`tabIOU Settlement`.settle_date) BETWEEN '{filters.get('f_date')}' AND '{filters.get('t_date')}'"
 
 	if filters.get("department"):
-		conditions += f" AND `tabIOU  Request`.department = \"{filters.get("department")}\""
+		conditions += f" AND `tabIOU  Request`.department = \"{filters.get('department')}\""
 	if filters.get("cash_box"):
-		conditions += f" AND `tabIOU Settlement`.cash_box = \"{filters.get("cash_box")}\""
+		conditions += f" AND `tabIOU Settlement`.cash_box = \"{filters.get('cash_box')}\""
 
 	# if filters.get("branch"):
 	# 	conditions += f" AND `tabDocket Entry`.branch = \"{filters.get("branch")}\""

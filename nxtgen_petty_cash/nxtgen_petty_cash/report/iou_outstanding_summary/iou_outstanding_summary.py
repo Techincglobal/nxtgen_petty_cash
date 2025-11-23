@@ -40,9 +40,9 @@ def get_data(filters=None):
 		conditions += f" AND DATE(`tabIOU  Request`.disbursed_on) BETWEEN '{filters.get('f_date')}' AND '{filters.get('t_date')}'"
 
 	if filters.get("department"):
-		conditions += f" AND `tabIOU  Request`.department = \"{filters.get("department")}\""
+		conditions += f" AND `tabIOU  Request`.department = '{filters.get('department')}'"
 	if filters.get("cash_box"):
-		conditions += f" AND `tabIOU  Request`.petty_cash_box = \"{filters.get("cash_box")}\""
+		conditions += f" AND `tabIOU  Request`.petty_cash_box = '{filters.get('cash_box')}'"
 	sql = f"""SELECT
 		`tabIOU  Request`.`name`, 
 	`tabIOU  Request`.employee, 
