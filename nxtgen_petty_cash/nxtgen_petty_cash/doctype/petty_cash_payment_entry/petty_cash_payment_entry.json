@@ -1,0 +1,153 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:PCPV-{#####}",
+ "creation": "2025-11-17 00:07:02.752920",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_1rpm",
+  "posting_date",
+  "petty_cash_box",
+  "amended_from",
+  "company",
+  "column_break_ycat",
+  "from_date",
+  "to_date",
+  "approver",
+  "cost_center",
+  "section_break_nndg",
+  "expenses_details_column",
+  "items",
+  "section_break_vgub",
+  "column_break_kkrd",
+  "column_break_cfuw",
+  "total"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_1rpm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Petty Cash Payment Entry",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Posting date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ycat",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date"
+  },
+  {
+   "fieldname": "petty_cash_box",
+   "fieldtype": "Link",
+   "label": "Petty Cash Box",
+   "options": "Petty Cash Box"
+  },
+  {
+   "fieldname": "approver",
+   "fieldtype": "Link",
+   "label": "Approver",
+   "options": "User"
+  },
+  {
+   "fieldname": "section_break_nndg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "expenses_details_column",
+   "fieldtype": "Column Break",
+   "label": "Expenses Details "
+  },
+  {
+   "fieldname": "section_break_vgub",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_kkrd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_cfuw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Petty Cash Payment Entry Item"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "default": "Main - PC",
+   "fieldname": "cost_center",
+   "fieldtype": "Link",
+   "label": "Cost Center",
+   "options": "Cost Center"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-11-17 13:07:27.907278",
+ "modified_by": "Administrator",
+ "module": "Nxtgen Petty Cash",
+ "name": "Petty Cash Payment Entry",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

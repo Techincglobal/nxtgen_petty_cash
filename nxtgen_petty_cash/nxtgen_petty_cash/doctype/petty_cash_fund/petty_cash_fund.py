@@ -3,8 +3,17 @@ from frappe.model.document import Document
 from frappe.utils import cint, comma_or, flt, getdate, nowdate
 
 class PettyCashFund(Document):
-	pass
-
+	def on_submit(self):
+		petty_cash_ledger = frappe.get_doc({
+			'doctype': 'Petty cash Ledger',
+			'date': getdate(),
+			'petty_cash_box': self.petty_cash_box,
+			'voucher_type':self.doctype,
+			'voucher_no': self.name,
+   			'transaction_type':"Receipt",
+			'received_dr':self.request_amount
+		})
+		petty_cash_ledger.insert(ignore_permissions=True)
 @frappe.whitelist()
 def make_payment_entry(dt, dn):
 	doc = frappe.get_doc(dt, dn)

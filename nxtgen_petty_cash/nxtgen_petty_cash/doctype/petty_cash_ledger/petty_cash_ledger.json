@@ -1,0 +1,130 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-11-17 16:34:13.575571",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "voucher_type",
+  "particulars",
+  "expense_category",
+  "received_dr",
+  "column_break_rpgv",
+  "petty_cash_box",
+  "voucher_no",
+  "transaction_type",
+  "reference",
+  "paid_cr",
+  "balance",
+  "is_cancel",
+  "section_break_bjhy",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "column_break_rpgv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "petty_cash_box",
+   "fieldtype": "Link",
+   "label": "Petty Cash Box",
+   "options": "Petty Cash Box"
+  },
+  {
+   "fieldname": "voucher_type",
+   "fieldtype": "Link",
+   "label": "Voucher Type",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "voucher_no",
+   "fieldtype": "Dynamic Link",
+   "label": "Voucher No",
+   "options": "voucher_type"
+  },
+  {
+   "fieldname": "particulars",
+   "fieldtype": "Data",
+   "label": "Particulars"
+  },
+  {
+   "fieldname": "transaction_type",
+   "fieldtype": "Data",
+   "label": "Transaction Type"
+  },
+  {
+   "fieldname": "expense_category",
+   "fieldtype": "Link",
+   "label": "Expense Category",
+   "options": "Expense Claim Type"
+  },
+  {
+   "fieldname": "reference",
+   "fieldtype": "Data",
+   "label": "Reference"
+  },
+  {
+   "fieldname": "received_dr",
+   "fieldtype": "Currency",
+   "label": "Received (Dr)"
+  },
+  {
+   "fieldname": "paid_cr",
+   "fieldtype": "Currency",
+   "label": "Paid (Cr)"
+  },
+  {
+   "fieldname": "balance",
+   "fieldtype": "Currency",
+   "label": "Balance"
+  },
+  {
+   "fieldname": "section_break_bjhy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_cancel",
+   "fieldtype": "Check",
+   "label": "Is Cancel"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-11-17 16:54:12.017595",
+ "modified_by": "Administrator",
+ "module": "Nxtgen Petty Cash",
+ "name": "Petty cash Ledger",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

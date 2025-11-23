@@ -60,12 +60,14 @@
    "reqd": 1
   },
   {
+   "default": "User",
    "fieldname": "request_by",
    "fieldtype": "Link",
    "label": "Request By",
    "options": "User"
   },
   {
+   "default": "Today",
    "fieldname": "required_on",
    "fieldtype": "Date",
    "in_list_view": 1,
@@ -101,7 +103,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-11-10 16:32:28.069148",
+ "modified": "2025-11-20 17:02:27.864867",
  "modified_by": "Administrator",
  "module": "Nxtgen Petty Cash",
  "name": "Petty Cash Fund",
@@ -123,7 +125,6 @@
   }
  ],
  "row_format": "Dynamic",
- "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

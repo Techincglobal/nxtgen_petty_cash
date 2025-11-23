@@ -1,0 +1,78 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-11-17 00:13:10.413259",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "iou_settlement",
+  "claim_type",
+  "column_break_pjjz",
+  "iou_request",
+  "description",
+  "amount"
+ ],
+ "fields": [
+  {
+   "fetch_from": "iou_settlement.iou_request",
+   "fetch_if_empty": 1,
+   "fieldname": "iou_request",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "IOU Request",
+   "options": "IOU  Request",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_pjjz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "iou_settlement",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "IOU Settlement",
+   "options": "IOU Settlement",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "iou_request.expenses_type",
+   "fetch_if_empty": 1,
+   "fieldname": "claim_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Claim Type",
+   "options": "Expense Claim Type"
+  },
+  {
+   "fetch_from": "iou_request.description",
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fetch_from": "iou_settlement.expense_amount",
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-11-22 23:18:35.936533",
+ "modified_by": "Administrator",
+ "module": "Nxtgen Petty Cash",
+ "name": "Petty Cash Payment Entry Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

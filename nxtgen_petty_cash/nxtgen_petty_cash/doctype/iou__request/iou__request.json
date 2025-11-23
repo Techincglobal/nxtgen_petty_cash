@@ -31,6 +31,7 @@
   "disbursed_details_tab",
   "disbursed_by",
   "disbursed_by_name",
+  "petty_cash_box",
   "column_break_inlv",
   "disbursed_on",
   "disbursed_ammount"
@@ -107,8 +108,7 @@
    "fieldname": "expenses_type",
    "fieldtype": "Link",
    "label": "Expenses Type",
-   "options": "Expense Claim Type",
-   "reqd": 1
+   "options": "Expense Claim Type"
   },
   {
    "fieldname": "column_break_rohc",
@@ -201,13 +201,20 @@
    "fieldname": "disbursed_ammount",
    "fieldtype": "Currency",
    "label": "Disbursed Ammount"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "petty_cash_box",
+   "fieldtype": "Link",
+   "label": "Petty Cash Box",
+   "options": "Petty Cash Box"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-11-16 22:12:27.864616",
+ "modified": "2025-11-20 18:32:21.466629",
  "modified_by": "Administrator",
  "module": "Nxtgen Petty Cash",
  "name": "IOU  Request",
@@ -229,7 +236,6 @@
   }
  ],
  "row_format": "Dynamic",
- "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [
