@@ -5,7 +5,7 @@ import frappe
 from frappe.model.document import Document
 
 
-class PettyCashBox(Document):
+class PettyCashFloating(Document):
 	@property
 	def balance_amount(self):
 		sql=f"""SELECT 
@@ -14,7 +14,7 @@ class PettyCashBox(Document):
 			`tabPetty cash Ledger`
 			WHERE
 			`tabPetty cash Ledger`.is_cancel <> 1 AND
-			`tabPetty cash Ledger`.petty_cash_box = '{self.name}';"""
+			`tabPetty cash Ledger`.petty_cash_floating = '{self.name}';"""
 		res=frappe.db.sql(sql, as_dict=1)
 		if res and res[0].ball:
 			return res[0].ball
@@ -27,7 +27,7 @@ class PettyCashBox(Document):
 			FROM	
 			`tabIOU  Request`
 			WHERE
-			`tabIOU  Request`.petty_cash_box = '{self.name}' AND
+			`tabIOU  Request`.petty_cash_floating = '{self.name}' AND
 			`tabIOU  Request`.docstatus = 1 AND
 			`tabIOU  Request`.`status` <> 'Settled';"""
 		res=frappe.db.sql(sql, as_dict=1)

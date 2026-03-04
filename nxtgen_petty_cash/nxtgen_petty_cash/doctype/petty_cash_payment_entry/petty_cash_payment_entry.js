@@ -7,10 +7,10 @@ frappe.ui.form.on("Petty Cash Payment Entry", {
 		erpnext.accounts.ledger_preview.show_accounting_ledger_preview(frm);
 
 		frm.add_custom_button(__('IOU Settlement'), function () {
-			if (!frm.doc.petty_cash_box) {
+			if (!frm.doc.petty_cash_floating) {
 				frappe.throw({
 					title: __("Mandatory"),
-					message: __("You must select a Cashbox before continuing.")
+					message: __("You must select a Petty Cash Floating before continuing.")
 				});
 			}
 			// if (frm.doc.petty_cash_box) {
@@ -40,7 +40,7 @@ frappe.ui.form.on("Petty Cash Payment Entry", {
 						filters: {
 							docstatus: 1,
 							is_gl_done: 0,
-							cash_box:frm.doc.petty_cash_box
+							petty_cash_floating: frm.doc.petty_cash_floating
 
 						}
 					}
@@ -50,8 +50,8 @@ frappe.ui.form.on("Petty Cash Payment Entry", {
 					// console.log(args1.filtered_children)
 					// opts.source_name=selections
 					if (selections.length === 0) {
-						
-							frappe.msgprint(__("Please select {0}", ["IOU Settlement"]))
+
+						frappe.msgprint(__("Please select {0}", ["IOU Settlement"]))
 						return;
 					}
 					frappe.call({

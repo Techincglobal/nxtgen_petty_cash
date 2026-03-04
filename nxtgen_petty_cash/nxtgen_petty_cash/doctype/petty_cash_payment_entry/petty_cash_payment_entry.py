@@ -29,8 +29,8 @@ class PettyCashPaymentEntry(Document):
 		for item in self.items:
 			gl_entries = []
 			# debit entry
-			acc = frappe.db.get_value("IOU  Request", item.iou_request, ['petty_cash_box'], as_dict=1)
-			PettyCashAccount = frappe.db.get_value("Petty Cash Box", acc.petty_cash_box, "account")
+			acc = frappe.db.get_value("IOU  Request", item.iou_request, ['petty_cash_floating'], as_dict=1)
+			PettyCashAccount = frappe.db.get_value("Petty Cash Floating", acc.petty_cash_floating, "account")
 			expencesAccount = get_expense_claim_account(item.claim_type, self.company)
 			# remarks = f"IOU disbursed to {self.loan_applicant}"
 			gl_entries.append(self.get_gl_dict({

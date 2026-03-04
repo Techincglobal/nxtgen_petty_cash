@@ -4,7 +4,7 @@
 frappe.ui.form.on("IOU  Request", {
 	refresh(frm) {
 		if (frm.doc.docstatus === 0) {
-            frm.page.set_indicator(frm.doc.status || "No Status", "blue");
+			frm.page.set_indicator(frm.doc.status || "No Status", "blue");
 		}
 		frm.trigger("show_save_button");
 		if (!frm.is_new()) {
@@ -39,7 +39,7 @@ frappe.ui.form.on("IOU  Request", {
 		}
 	},
 	show_save_button: function (frm) {
-		
+
 		if (frm.doc.docstatus === 0) {
 			$(".form-message").prop("hidden", true);
 			if (frm.doc.status == "Pending") {
@@ -54,7 +54,7 @@ frappe.ui.form.on("IOU  Request", {
 							// 	fieldname: 'first_name',
 							// 	fieldtype: 'Data'
 							// },
-							
+
 							{
 								label: 'Approved Amount',
 								fieldname: 'approved_amount',
@@ -81,7 +81,7 @@ frappe.ui.form.on("IOU  Request", {
 				});
 			}
 			if (frm.doc.status == "Approved") {
-			frm.page.set_primary_action("Disbursed", () => {
+				frm.page.set_primary_action("Disbursed", () => {
 					// console.log("Approve");
 					let d = new frappe.ui.Dialog({
 						title: 'Enter details',
@@ -97,10 +97,10 @@ frappe.ui.form.on("IOU  Request", {
 							// 	fieldtype: 'Data'
 							// },
 							{
-								label: 'Petty Cash Box',
+								label: 'Petty Cash Floating',
 								fieldname: 'petty_cash_box',
 								fieldtype: 'Link',
-								options: 'Petty Cash Box',
+								options: 'Petty Cash Floating',
 								reqd: 1,
 							},
 
@@ -116,15 +116,15 @@ frappe.ui.form.on("IOU  Request", {
 						primary_action(values) {
 							d.hide();
 							frm.set_value('disbursed_ammount', values.disbursed_amount);
-							frm.set_value('petty_cash_box', values.petty_cash_box);
+							frm.set_value('petty_cash_floating', values.petty_cash_box);
 							frm.set_value('status', 'Disbursed');
-							frm.set_value('disbursed_by', values.petty_cash_box);
+							// frm.set_value('disbursed_by', values.petty_cash_box);
 							frm.set_value('disbursed_by', frappe.session.user);
 							frm.set_value('disbursed_on', frappe.datetime.now_datetime());
 							frm.save();
 							frm.submit();
 							// console.log(values);
-							
+
 						}
 					});
 
@@ -140,7 +140,7 @@ frappe.ui.form.on("IOU  Request", {
 
 
 	},
-	make_iou_settlement:function(frm){
+	make_iou_settlement: function (frm) {
 		frappe.model.open_mapped_doc({
 			method: "nxtgen_petty_cash.nxtgen_petty_cash.doctype.iou__request.iou__request.make_iou_settlement",
 			frm: frm

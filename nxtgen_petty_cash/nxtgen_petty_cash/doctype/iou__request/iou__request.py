@@ -16,7 +16,7 @@ class IOURequest(Document):
 		petty_cash_ledger = frappe.get_doc({
 			'doctype': 'Petty cash Ledger',
 			'date': getdate(),
-			'petty_cash_box': self.petty_cash_box,
+			'petty_cash_floating': self.petty_cash_floating,
 			'voucher_type':self.doctype,
 			'voucher_no': self.name,
 			'expense_category': self.expenses_type,

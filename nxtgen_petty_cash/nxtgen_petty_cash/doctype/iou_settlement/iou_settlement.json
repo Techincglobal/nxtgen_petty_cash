@@ -10,7 +10,7 @@
   "employee",
   "amended_from",
   "is_gl_done",
-  "cash_box",
+  "petty_cash_floating",
   "column_break_ixxt",
   "iou_request",
   "requested_amount",
@@ -174,18 +174,18 @@
    "mandatory_depends_on": "eval:doc.total_expenses>doc.requested_amount"
   },
   {
-   "fetch_from": "iou_request.petty_cash_box",
-   "fieldname": "cash_box",
+   "fetch_from": "iou_request.petty_cash_floating",
+   "fieldname": "petty_cash_floating",
    "fieldtype": "Link",
-   "label": "Cash Box",
-   "options": "Petty Cash Box"
+   "label": "Petty Cash Floating",
+   "options": "Petty Cash Floating"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-11-22 20:24:46.336214",
+ "modified": "2026-03-04 04:12:13.785142",
  "modified_by": "Administrator",
  "module": "Nxtgen Petty Cash",
  "name": "IOU Settlement",

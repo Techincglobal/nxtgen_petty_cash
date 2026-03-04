@@ -12,8 +12,8 @@ class IOUSettlement(Document):
 		on_submition_validation(self)
 		frappe.db.set_value("IOU  Request", self.iou_request, "status", "Settled")
 
-		petty_cash_box	= frappe.db.get_value("IOU  Request", self.iou_request, "petty_cash_box")
-		make_petty_cash_log(self,petty_cash_box)
+		petty_cash_floating	= frappe.db.get_value("IOU  Request", self.iou_request, "petty_cash_floating")
+		make_petty_cash_log(self,petty_cash_floating)
 	def on_cancel(self):
 		frappe.db.set_value("IOU  Request", self.iou_request, "status", "Disbursed")
 		log_list=frappe.db.get_list('Petty cash Ledger',
@@ -30,13 +30,13 @@ def on_submition_validation(doc):
 			frappe.throw(
                 "Actual Return and Expected Return must match when changed."
             )
-def make_petty_cash_log(doc,petty_cash_box):
+def make_petty_cash_log(doc,petty_cash_floating):
 	if doc.requested_amount>doc.total_expenses:
 		if doc.return_amount>0:
 			petty_cash_ledger = frappe.get_doc({
 				'doctype': 'Petty cash Ledger',
 				'date': doc.settle_date,
-				'petty_cash_box': petty_cash_box,
+				'petty_cash_floating': petty_cash_floating,
 				'voucher_type':doc.doctype,
 				'voucher_no': doc.name,
 				'transaction_type':"Receipt",

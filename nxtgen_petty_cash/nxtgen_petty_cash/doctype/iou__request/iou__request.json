@@ -31,7 +31,7 @@
   "disbursed_details_tab",
   "disbursed_by",
   "disbursed_by_name",
-  "petty_cash_box",
+  "petty_cash_floating",
   "column_break_inlv",
   "disbursed_on",
   "disbursed_ammount"
@@ -204,17 +204,17 @@
   },
   {
    "allow_on_submit": 1,
-   "fieldname": "petty_cash_box",
+   "fieldname": "petty_cash_floating",
    "fieldtype": "Link",
-   "label": "Petty Cash Box",
-   "options": "Petty Cash Box"
+   "label": "Petty Cash Floating",
+   "options": "Petty Cash Floating"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-11-20 18:32:21.466629",
+ "modified": "2026-03-03 22:51:35.752536",
  "modified_by": "Administrator",
  "module": "Nxtgen Petty Cash",
  "name": "IOU  Request",
@@ -222,6 +222,8 @@
  "owner": "Administrator",
  "permissions": [
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -230,6 +232,7 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "select": 1,
    "share": 1,
    "submit": 1,
    "write": 1

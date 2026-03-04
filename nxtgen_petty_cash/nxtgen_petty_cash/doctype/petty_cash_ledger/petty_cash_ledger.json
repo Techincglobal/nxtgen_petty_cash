@@ -11,7 +11,7 @@
   "expense_category",
   "received_dr",
   "column_break_rpgv",
-  "petty_cash_box",
+  "petty_cash_floating",
   "voucher_no",
   "transaction_type",
   "reference",
@@ -30,12 +30,6 @@
   {
    "fieldname": "column_break_rpgv",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "petty_cash_box",
-   "fieldtype": "Link",
-   "label": "Petty Cash Box",
-   "options": "Petty Cash Box"
   },
   {
    "fieldname": "voucher_type",
@@ -99,12 +93,18 @@
    "fieldname": "is_cancel",
    "fieldtype": "Check",
    "label": "Is Cancel"
+  },
+  {
+   "fieldname": "petty_cash_floating",
+   "fieldtype": "Link",
+   "label": "Petty Cash Floating",
+   "options": "Petty Cash Floating"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-11-17 16:54:12.017595",
+ "modified": "2026-03-02 15:34:17.153555",
  "modified_by": "Administrator",
  "module": "Nxtgen Petty Cash",
  "name": "Petty cash Ledger",
@@ -119,6 +119,7 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "select": 1,
    "share": 1,
    "write": 1
   }

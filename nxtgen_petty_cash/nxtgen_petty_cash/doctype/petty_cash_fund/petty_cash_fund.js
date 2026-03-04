@@ -1,11 +1,12 @@
 frappe.provide("erpnext.accounts");
 frappe.ui.form.on("Petty Cash Fund", {
 	refresh: function (frm) {
+		frm.trigger("make_dashboard");
 		if (frm.doc.docstatus === 1) {
 			frm.add_custom_button(__("Payment"), () => frm.events.make_payment_entry(frm), __("Create"));
 			// frm.add_custom_button(__("Payment"), () => this.make_payment_entry(), __("Create"));
 			cur_frm.page.set_inner_btn_group_as_primary(__("Create"));
-			frm.trigger("make_dashboard");
+
 			// (
 			// 	frm.doc.lead, () => {
 			// 	// frappe.set_route("Form", "Lead", frm.doc.lead);
@@ -25,8 +26,11 @@ frappe.ui.form.on("Petty Cash Fund", {
 			},
 		});
 	},
-	petty_cash_box: function (frm) {
-		frm.trigger("make_dashboard");
+	petty_cash_floating: function (frm) {
+		if (frm.doc.petty_cash_floating) {
+			frm.trigger("make_dashboard");
+		}
+		// frm.trigger("make_dashboard");
 	},
 	make_dashboard: function (frm) {
 		// erpnext.utils.render_dashboard({
@@ -34,20 +38,22 @@ frappe.ui.form.on("Petty Cash Fund", {
 		// 	title: __("Petty Cash Fund Dashboard"),
 		// 	data: frm.dashboard_data
 		// });
+		console.log("Dashboard function triggered");
 		$("div").remove(".form-dashboard-section.custom");
 		frappe.call({
 			method: "frappe.client.get", // The server-side method to call
 			args: {
-				doctype: "Petty Cash Box", // Replace with the actual DocType name
-				name: frm.doc.petty_cash_box, // Replace with the specific document's name/ID
+				doctype: "Petty Cash Floating", // Replace with the actual DocType name
+				name: frm.doc.petty_cash_floating, // Replace with the specific document's name/ID
 			},
 			callback: function (r) {
+				console.log("Server response:", r); // Log the entire response for debugging
 				if (r.message) {
 					var doc = r.message; // The retrieved document object
 					console.log(doc);
 					frm.dashboard.add_section(
 						frappe.render_template("petty_cash_fund_dashboard", {
-							data: {"avl_bal_amount": doc.balance_amount,"oustanding_amount": doc.outstanding_amount,"flot_ammount":doc.floating_amount},
+							data: { "avl_bal_amount": doc.balance_amount, "oustanding_amount": doc.outstanding_amount, "flot_ammount": doc.floating_amount },
 						})
 						,
 						__("Cash Box Details"),

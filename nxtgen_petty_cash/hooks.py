@@ -133,6 +133,15 @@ app_license = "mit"
 # 	"ToDo": "custom_app.overrides.CustomToDo"
 # }
 
+fixtures = [
+    {
+        "dt": "Workspace",
+        "filters": [
+            ["module", "=", "Nxtgen Petty Cash"]
+        ]
+    }
+]
+
 # Document Events
 # ---------------
 # Hook on document methods and events

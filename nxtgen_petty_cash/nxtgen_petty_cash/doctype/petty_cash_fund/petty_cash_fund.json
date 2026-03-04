@@ -7,7 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_kjzm",
-  "petty_cash_box",
+  "petty_cash_floating",
   "request_by",
   "column_break_gjyk",
   "request_amount",
@@ -33,14 +33,6 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
-  },
-  {
-   "fieldname": "petty_cash_box",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Petty Cash Box",
-   "options": "Petty Cash Box",
-   "reqd": 1
   },
   {
    "fieldname": "column_break_gjyk",
@@ -81,7 +73,7 @@
    "label": "Account Details"
   },
   {
-   "fetch_from": "petty_cash_box.account",
+   "fetch_from": "petty_cash_floating.account",
    "fieldname": "account",
    "fieldtype": "Link",
    "label": "Account",
@@ -92,18 +84,26 @@
    "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "petty_cash_box.approver",
+   "fetch_from": "petty_cash_floating.approver",
    "fieldname": "approver",
    "fieldtype": "Link",
    "label": "Approver",
    "options": "User"
+  },
+  {
+   "fieldname": "petty_cash_floating",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Petty Cash Floating",
+   "options": "Petty Cash Floating",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-11-20 17:02:27.864867",
+ "modified": "2026-03-03 15:27:24.575213",
  "modified_by": "Administrator",
  "module": "Nxtgen Petty Cash",
  "name": "Petty Cash Fund",
@@ -111,6 +111,8 @@
  "owner": "Administrator",
  "permissions": [
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,

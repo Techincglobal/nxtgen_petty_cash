@@ -8,7 +8,7 @@
  "field_order": [
   "section_break_1rpm",
   "posting_date",
-  "petty_cash_box",
+  "petty_cash_floating",
   "amended_from",
   "company",
   "column_break_ycat",
@@ -62,12 +62,6 @@
    "label": "To Date"
   },
   {
-   "fieldname": "petty_cash_box",
-   "fieldtype": "Link",
-   "label": "Petty Cash Box",
-   "options": "Petty Cash Box"
-  },
-  {
    "fieldname": "approver",
    "fieldtype": "Link",
    "label": "Approver",
@@ -114,18 +108,23 @@
    "reqd": 1
   },
   {
-   "default": "Main - PC",
    "fieldname": "cost_center",
    "fieldtype": "Link",
    "label": "Cost Center",
    "options": "Cost Center"
+  },
+  {
+   "fieldname": "petty_cash_floating",
+   "fieldtype": "Link",
+   "label": "Petty Cash Floating",
+   "options": "Petty Cash Floating"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-11-17 13:07:27.907278",
+ "modified": "2026-03-04 04:29:42.450125",
  "modified_by": "Administrator",
  "module": "Nxtgen Petty Cash",
  "name": "Petty Cash Payment Entry",
@@ -133,6 +132,8 @@
  "owner": "Administrator",
  "permissions": [
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -141,6 +142,7 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "select": 1,
    "share": 1,
    "submit": 1,
    "write": 1

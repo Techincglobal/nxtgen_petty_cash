@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestPettyCashBox(FrappeTestCase):
+class TestPettyCashFloating(FrappeTestCase):
 	pass
