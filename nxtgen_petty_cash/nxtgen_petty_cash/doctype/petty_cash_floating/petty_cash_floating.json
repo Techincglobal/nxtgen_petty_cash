@@ -28,7 +28,7 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Petty Cash Box",
+   "options": "Petty Cash Floating",
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
@@ -93,7 +93,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-03-02 15:17:02.493478",
+ "modified": "2026-03-04 07:06:45.431884",
  "modified_by": "Administrator",
  "module": "Nxtgen Petty Cash",
  "name": "Petty Cash Floating",
