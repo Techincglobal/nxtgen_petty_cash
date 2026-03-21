@@ -1,7 +1,10 @@
 frappe.provide("erpnext.accounts");
 frappe.ui.form.on("Petty Cash Fund", {
 	refresh: function (frm) {
-		frm.trigger("make_dashboard");
+		if (frm.doc.petty_cash_floating) {
+			frm.trigger("make_dashboard");
+		}
+		// frm.trigger("make_dashboard");
 		if (frm.doc.docstatus === 1) {
 			frm.add_custom_button(__("Payment"), () => frm.events.make_payment_entry(frm), __("Create"));
 			// frm.add_custom_button(__("Payment"), () => this.make_payment_entry(), __("Create"));
