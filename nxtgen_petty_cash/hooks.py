@@ -146,16 +146,16 @@ fixtures = [
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"Customer": {
-# 		"autoname": "nxtgen_petty_cash.custom.customer.customer_naming.custom_customer_naming"
-# 	}
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	"Payment Entry": {
+		"on_submit": "nxtgen_petty_cash.custom.payment_entry.payment_entry.custom_on_submit"
+	}
+	# "*": {
+	# 	"on_update": "method",
+	# 	"on_cancel": "method",
+	# 	"on_trash": "method"
+	# }
+}
 
 # Scheduled Tasks
 # ---------------

@@ -5,7 +5,7 @@ frappe.ui.form.on("Petty Cash Fund", {
 			frm.trigger("make_dashboard");
 		}
 		// frm.trigger("make_dashboard");
-		if (frm.doc.docstatus === 1) {
+		if (frm.doc.docstatus === 1 && !frm.doc.is_opening && !frm.doc.has_payment_entry) {
 			frm.add_custom_button(__("Payment"), () => frm.events.make_payment_entry(frm), __("Create"));
 			// frm.add_custom_button(__("Payment"), () => this.make_payment_entry(), __("Create"));
 			cur_frm.page.set_inner_btn_group_as_primary(__("Create"));

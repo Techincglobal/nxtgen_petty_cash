@@ -4,16 +4,23 @@ from frappe.utils import cint, comma_or, flt, getdate, nowdate
 
 class PettyCashFund(Document):
 	def on_submit(self):
-		petty_cash_ledger = frappe.get_doc({
-			'doctype': 'Petty cash Ledger',
-			'date': getdate(),
-			'petty_cash_floating': self.petty_cash_floating,
-			'voucher_type':self.doctype,
-			'voucher_no': self.name,
-   			'transaction_type':"Receipt",
-			'received_dr':self.request_amount
-		})
-		petty_cash_ledger.insert(ignore_permissions=True)
+		pettycash_flotting = frappe.get_doc("Petty Cash Floating", self.petty_cash_floating)
+		floting_amount = pettycash_flotting.floating_amount
+		balance_amount = pettycash_flotting.balance_amount
+		if floting_amount-balance_amount<self.request_amount:
+			frappe.throw("Request amount is higher than the allowed petty cash floating limit.")
+		else:
+			petty_cash_ledger = frappe.get_doc({
+				'doctype': 'Petty cash Ledger',
+				'date': getdate(),
+				'petty_cash_floating': self.petty_cash_floating,
+				'voucher_type':self.doctype,
+				'voucher_no': self.name,
+   				'transaction_type':"Receipt",
+				'received_dr':self.request_amount,
+				'is_opening':self.is_opening
+			})
+			petty_cash_ledger.insert(ignore_permissions=True)
 @frappe.whitelist()
 def make_payment_entry(dt, dn):
 	doc = frappe.get_doc(dt, dn)
@@ -30,6 +37,7 @@ def make_payment_entry(dt, dn):
 	pe.paid_to = doc.account
 	pe.paid_amount = doc.request_amount	
 	pe.received_amount = doc.request_amount
+	pe.custom_petty_cash_fund = doc.name
 	# pe.append(
 	# 				"references",
 	# 				{

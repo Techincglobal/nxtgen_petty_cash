@@ -10,6 +10,7 @@
   "particulars",
   "expense_category",
   "received_dr",
+  "is_opening",
   "column_break_rpgv",
   "petty_cash_floating",
   "voucher_no",
@@ -99,12 +100,18 @@
    "fieldtype": "Link",
    "label": "Petty Cash Floating",
    "options": "Petty Cash Floating"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_opening",
+   "fieldtype": "Check",
+   "label": "Is Opening"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-03-02 15:34:17.153555",
+ "modified": "2026-03-21 11:47:12.693257",
  "modified_by": "Administrator",
  "module": "Nxtgen Petty Cash",
  "name": "Petty cash Ledger",
